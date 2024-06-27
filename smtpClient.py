@@ -4,16 +4,6 @@ from socket import *
 def smtp_client(port=1025, mailserver='127.0.0.1'):
     msg = "\r\n My message"
     endmsg = "\r\n.\r\n"
-
-
-    username = 'your_email@example.com'
-    password = 'your_password'
-
-    # Email details
-    from_addr = 'your_email@example.com'
-    to_addr = 'recipient@example.com'
-    subject = 'Test Email'
-    body = 'This is a test email.'
     
     # Choose a mail server (e.g. Google mail server) if you want to verify the script beyond GradeScope
     mail_server = mailserver
@@ -39,7 +29,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send MAIL FROM command and handle server response.
     # Fill in start
-    mailFrom_coomand = f" Mail from : <{to_addr}\r\t>"
+    mailFrom_coomand = f" Mail from : your_email@example.com\r\t>"
     clientSocket.send(mailFrom_coomand.encode())
     recv2 = clientSocket.recv(1024).decode()
     print("Message aftr MAIL from command", recv2)
